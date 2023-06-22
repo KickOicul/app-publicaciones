@@ -22,7 +22,7 @@ services:
     environment:
       - POSTGRES_DB=anuncios
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=Awapost33
+      - POSTGRES_PASSWORD=Contr@s3na44
 
   nginx:
     build: ./nginx
