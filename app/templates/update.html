@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actualizar artículo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}?v=1">
+</head>
+<body>
+    <h1>Actualizar artículo</h1>
+
+    <form method="POST" action="{{ url_for('update', article_id=article[0]) }}" enctype="multipart/form-data">
+        <label for="title">Título:</label>
+        <input type="text" name="title" id="title" value="{{ article[1] }}">
+
+        <label for="price">Precio:</label>
+        <input type="text" name="price" id="price" value="{{ article[2] }}">
+
+        <label for="image">Imagen:</label>
+        <input type="file" name="image" id="image">
+
+        <input type="submit" value="Actualizar">
+    </form>
+</body>
+</html>

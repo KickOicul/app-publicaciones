@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmar eliminación</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}?v=2">
+<body>
+    <h1>Confirmar eliminación</h1>
+    <p>{{ confirm_message }}</p>
+
+    <form method="POST" action="{{ url_for('delete', article_id=article_id) }}">
+        <input type="submit" value="Eliminar" class="button">
+    </form>
+    <a href="{{ url_for('index') }}" class="button">Cancelar</a>
+</body>
+</html>
