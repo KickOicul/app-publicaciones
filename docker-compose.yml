@@ -3,7 +3,7 @@ services:
   web:
     build: .
     container_name: test_deploy_web
-    command: gunicorn app:app --bind 0.0.0.0:8000
+    command: bash -c "sleep 20 && gunicorn app:app --bind 0.0.0.0:8000"
     volumes:
       - ./app:/app/
       - staticfiles:/app/static/
@@ -15,7 +15,7 @@ services:
       - db
 
   db:
-    image: postgres
+    build: ./postgres
     container_name: test_deploy_db
     volumes:
       - postgres_data:/var/lib/postgresql/data/
